@@ -1,18 +1,98 @@
 ﻿<section class="mainbar" data-ng-controller="user as vm">
+    <script>
+        function toggle_visibility(id, value) {
+            var e = document.getElementById(id);
+            if (value == 'true')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>
+
     <section class="matter">
         <div class="container">
             <div class="row">
-                <div class="widget wviolet">
+                <div class="widget wgreen">
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
                         <h3>Look at the Stats</h3>
                         <hr />
-                        <p>There should me something here</p>
                         <div>
                             <div>
-                                
+
+                                <label>Search: <input ng-model="searchText"></label>
+                                <p class="rightAlign">Hello : {{TTeam}}</p>
                             </div>
                         </div>
+                        <br />
+                        <br />
+                    </div>
+                    <hr />
+                    <div>
+                        <table ng-table="tableprams" class="table statsTable statsColumn leftAlign" ng-app="ngAnimate">
+                            <thead class="statsColumn">
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Runs</th>
+                                    <th>Home Runs</th>
+                                    <th>Leaugue</th>
+                                    <th>Batting Average</th>
+                                </tr>
+                            </thead>
+                            <tr ng-repeat="stat in teamTable | filter:searchText |orderBy:'Rank'" class="statsColumn ">
+                                <td>
+                                    <button ng-click="sortPlayers(stat.TeamID, stat.Name)" class="btn btn-xs">
+                                        <b class="button invisable notHere">a</b>
+                                        <i class="fa fa-arrow-right"></i>
+                                    </button>
+                                </td>
+                                <td data-title="Name">
+                                    {{stat.Name}}
+                                </td>
+                                <td data-title="Runs">
+                                    {{stat.Runs}}
+                                </td>
+                                <td data-title="HomeRuns">
+                                    {{stat.HomeRuns}}
+                                </td>
+                                <td data-title="League">
+                                    {{stat.League}}
+                                </td>
+                                <td data-title="Average Batting Average">
+                                    {{stat.AverageBattingAverage}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <table ng-table="tableprams" class="table statsTable statsColumn rightAlign " ng-app="ngAnimate">
+                            <tr class="statsColumn">
+                                <th>Name</th>
+                                <th>Runs</th>
+                                <th>Home Runs</th>
+                                <th>Position</th>
+                                <th>Batting Average</th>
+                            </tr>
+                            <tr ng-repeat="stat in playerTable | filter: filterPlayers |orderBy:'Rank'" class="statsColumn">
+                                <td data-title="Name">
+                                    {{stat.Name}}
+                                </td>
+                                <td data-title="Runs">
+                                    {{stat.Runs}}
+                                </td>
+                                <td data-title="HomeRuns">
+                                    {{stat.HomeRuns}}
+                                </td>
+                                <td data-title="Position">
+                                    {{stat.Position}}
+                                </td>
+                                <td data-title="Average Batting Average">
+                                    {{stat.BattingAverage}}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="widget-foot">
                         <div class="clearfix"></div>

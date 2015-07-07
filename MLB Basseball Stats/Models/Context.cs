@@ -21,6 +21,8 @@ namespace MLB_Basseball_Stats.Models
 
         public DbSet<Team> team { get; set; }
 
+        public DbSet<Player> player { get; set; }
+
         //DbSet<Id> id{ get; set; }
 
         /*internal string Metadata()

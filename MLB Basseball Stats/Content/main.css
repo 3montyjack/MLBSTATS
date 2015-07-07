@@ -1,0 +1,31 @@
+﻿.widget .table.statsTable {
+    width: 45%;
+}
+
+    .widget .table.statsTable .statsColumn {
+        width: auto;
+    }
+
+    .widget .table.statsTable.leftAlign {
+        float: left;
+        width: 40%;
+    }
+
+    .widget .table.statsTable.rightAlign {
+        float: right;
+        width: 45%;
+    }
+
+.widget .button.invisable.notHere {
+    visibility: hidden;
+}
+
+.verticalLine {
+    border-left: thin solid grey;
+    border-spacing: 2px;
+}
+
+.verticalLineR {
+    border-right: thin solid grey;
+    border-spacing: 2px;
+}

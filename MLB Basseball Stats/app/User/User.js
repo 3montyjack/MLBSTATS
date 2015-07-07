@@ -10,19 +10,46 @@ function user(common, $scope, $http) {
 
     var vm = this;
     //var id;
-    var promiseOfId = $http.get('api/stats/table');
-    promiseOfId.then(function (payload) {
-        $scope.statTable = payload.data;
-        alert(payload.data);
+    var promiseOfTeam = $http.get('api/stats/TeamTable');
+    promiseOfTeam.then(function (payload) {
+        $scope.teamTable = payload.data;
+        //$scope.id = payload.data;
+        //alert(payload.data);
     });
-    vm.title = 'User';
+
+    var promiseOfPlayer = $http.get('api/stats/PlayerTable');
+    promiseOfPlayer.then(function (payload) {
+        $scope.playerTable = payload.data;
+        //$scope.id = payload.data;
+        //alert(payload.data);
+    });
+
+
+    var team = "XYZ";
+    $scope.sortPlayers = function (teamValue , teamName) {
+        //alert(teamValue);
+        team = teamValue;
+        $scope.TTeam = teamName;
+    }
+
+    
+
+    $scope.filterPlayers = function (player) {
+        if (team == "") {
+            return true;
+        }
+        return player.Team == team;
+    }
+
+
+    vm.title = 'Statistics';
     activate();
 
     function activate() {
         common.activateController([], controllerId)
             .then(
-                function() {
-                     log('Activated User View');
+                function () {
+                    log('Activated User View');
                 }
             );
     }

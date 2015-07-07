@@ -7,27 +7,26 @@ using System.Web;
 
 namespace MLB_Basseball_Stats.Models
 {
-    [Table("TeamTable")]
-    public class Team
+    [Table("PlayerTable")]
+    public class Player
     {
         public int Rank { get; set; }
 
+        [Key]
         public string Name { get; set; }
 
-        public string TeamID { get; set; }
+        public string Team { get; set; }
 
-        public string League { get; set; }
-
-        public int Games { get; set; }
-
-        public int HomeRuns { get; set; }
-
-        public int RunsBattedIn { get; set; }
+        public string Position { get; set; }
 
         public int Runs { get; set; }
 
         public int Hits { get; set; }
 
-        public decimal AverageBattingAverage { get; set; }
+        public int HomeRuns { get; set; }
+
+        public int RunsBattedIn { get; set; }
+
+        public decimal BattingAverage { get; set; }
     }
 }

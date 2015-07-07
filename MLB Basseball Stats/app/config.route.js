@@ -18,7 +18,7 @@
     // Define the routes
     function getRoutes() {
         return [
-            {
+            /*{
                 url: '/',
                 config: {
                     templateUrl: 'app/dashboard/dashboard.html',
@@ -38,14 +38,14 @@
                         content: '<i class="fa fa-lock"></i> Admin'
                     }
                 }
-            }, {
-                url: '/user',
+            },*/ {
+                url: '/',
                 config: {
                     title: 'user',
                     templateUrl: 'app/user/User.html',
                     settings: {
                         nav: 3,
-                        content: '<i class="fa fa-terminal"></i> User'
+                        content: '<i class="fa fa-terminal"></i> Statistics'
                     }
                 }
             }

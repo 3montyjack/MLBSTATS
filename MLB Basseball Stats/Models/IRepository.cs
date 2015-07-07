@@ -1,16 +1,17 @@
-﻿using System;
-using Newtonsoft.Json.Linq;
-using System.Linq;
+﻿using Breeze.ContextProvider;
 using MLB_Basseball_Stats.Models;
-using Breeze.ContextProvider;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Linq;
 
 namespace MLB_Baseball_Stats.Models
 {
     public interface IRepository
     {
-
         IQueryable<Team> GetAllTeams();
-        
+
+        IQueryable<Player> GetAllPlayers();
+
         //Order GetOrder(int Id);
 
         //string MetaData { get; }
@@ -18,6 +19,5 @@ namespace MLB_Baseball_Stats.Models
         //SaveResult SaveChanges(JObject saveBundle);
 
         //IQueryable<Team> Teams();
-
     }
 }

@@ -203,6 +203,7 @@
     </Compile>
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\ContextInitial.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Repository.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,6 +245,7 @@
     <Content Include="Content\images\AngularJS-small.png" />
     <Content Include="Content\images\breezelogo.png" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />

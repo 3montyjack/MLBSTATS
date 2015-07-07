@@ -20,12 +20,23 @@ namespace MLB_Basseball_Stats.Controllers
         }
 
         [HttpGet]
-        [Route("api/Stats/table")]
-        public IEnumerable<Team> GetTable()
+        [Route("api/Stats/TeamTable")]
+        public IEnumerable<Team> GetSTable()
         {
             using (var db = new Context())
             {
                 return db.team.ToList();
+            }
+        }
+
+        [HttpGet]
+        [Route("api/Stats/PlayerTable")]
+        public IEnumerable<Player> GetPTable()
+        {
+            using (var db = new Context())
+            {
+                return db.player.ToList();
+                //return new string[] { "value 1", "value2", "value 3" };
             }
         }
     }

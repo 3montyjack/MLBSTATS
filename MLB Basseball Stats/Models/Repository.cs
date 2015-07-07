@@ -9,10 +9,16 @@ namespace MLB_Basseball_Stats.Models
     public class Repository : IRepository
     {
         private Context db;
+        private Context db2;
 
         public IQueryable<Team> GetAllTeams()
         {
             return db.team;
+        }
+
+        public IQueryable<Player> GetAllPlayers()
+        {
+            return db2.player;
         }
 
         /*internal List<Team> Retrieve()
